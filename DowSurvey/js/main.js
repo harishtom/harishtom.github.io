@@ -10,7 +10,7 @@ var config = {
       id: "text1",
       questionId: "5f90a7b5f543471f60ab7311",
       questionText:
-        "Overall please rate you Webex Meeting Experience",
+        "Overall, please rate your Webex Meeting Experience",
       questionType: "Number",
       valueid: "smile-ratings",
     },
