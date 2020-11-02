@@ -7,7 +7,7 @@ var config = {
   throttling: true, // Should be in boolean, whether throttling is required or not.
   throttlingTime: 1, //should be in integer, denotes "Hour"
   throttlingSubmitButton: false, // Should be in boolean,
-  throttlingMessage: "Thank you for using Webex Meetings, Your feedback has already been submitted.",
+  throttlingMessage: "Thank you for using Webex Meetings.",
 
   responses: [
     {
