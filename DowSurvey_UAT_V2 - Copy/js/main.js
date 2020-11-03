@@ -1,16 +1,20 @@
 // configuration Settings for BYOS
 var config = {
   baseURL: "https://api.getcloudcherry.com",
-  SuveyToken: "TR-143352", //Pass survey token here created using Postman
+  SuveyToken: "TR-143352", //Pass survey token here created using Postman", //Pass survey token here created using Postman
   securityPassphrase: "truistcx2020", //Pass security Passphrase used during survey token creation
   groupQuestion: "Please rate your experience with :",
+  throttling: true, // Should be in boolean, whether throttling is required or not.
+  throttlingTime: 24, //should be in integer, denotes "Hour"
+  throttlingSubmitButton: false, // Should be in boolean,
+  throttlingMessage: "Thank you for using Webex Meetings.",
 
   responses: [
     {
       id: "text1",
       questionId: "5f90a7b5f543471f60ab7311",
       questionText:
-        "Overall please rate you Webex Meeting Experience",
+        "Overall, please rate your Webex Meeting Experience",
       questionType: "Number",
       valueid: "smile-ratings",
     },
@@ -55,7 +59,6 @@ var config = {
 
 
 
-
 // variable declaration
 var hoverValue;
 var oAuthToken;
@@ -80,10 +83,30 @@ window.onload = function () {
   //   questionId: "5baa1126ff7ece0e9060de74",
   //   answer: "Kundan",
   // };
+    //prefills.push(prefill1);
+    document.getElementById("w3mission").value = '';
+      //show the survey already submitted
+  var user=getCookie("WXM_Token_cookie");
+  if (user === config.SuveyToken) {
+    document.getElementById("main-page").style.display = "none"
 
 
-  //prefills.push(prefill1);
-  document.getElementById("w3mission").value = '';
+    document.getElementById("resubmited-survey").style.display = "block";
+    document.getElementById("throttling-msg").innerHTML = config.throttlingMessage;
+    if(!config.throttlingSubmitButton){
+      document.getElementById("resubmit").style.display = "none";
+
+    }
+
+  }
+
+
+
+  // else{
+
+  // }
+
+
   // Passing the questiontext in the question
 
 
@@ -289,6 +312,7 @@ if (sign !== undefined) {
       },
     };
     $.ajax(settings).done(function (response) {
+      createCookies();
       if (response != null) {
         removePreviousValue();
       }
@@ -305,4 +329,35 @@ function removePreviousValue() {
   // showing the thank you after submitting the feedback
   $("#main-page").hide();
   $("#thank-you").show();
+}
+
+// create previous cookie
+function createCookies(){
+  if(config.throttling){
+   var hour = config.throttlingTime;
+  var now = new Date();
+  now.setTime(now.getTime() + (hour * 3600 * 1000));
+  document.cookie="WXM_Token_cookie=" + config.SuveyToken + ";" + "expires=" + now.toUTCString() + "; path=/";
+  }
+}
+
+// get previous cookie
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function showSurvey(){
+  document.getElementById("resubmited-survey").style.display = "none";
+  document.getElementById("main-page").style.display = "block";
 }

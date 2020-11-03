@@ -191,7 +191,7 @@ width: calc(18.18% - 1px);
 .rating-icon img {
     width: 90%;
 }
-.rating-icon img:nth-child(2) {
+.rating-icon img:nth-child(2), #resubmited-survey {
     display: none;
 }
 .question-text span > span {
@@ -282,8 +282,9 @@ img.logo {
     margin-top: 15px;
     display: block;
 }
-#thank-you {
+#thank-you, #resubmited-survey {
     text-align: center;
+    
 }
 div#preloader {
     width: 1px;
@@ -301,6 +302,30 @@ body{
 }
 .color-i{
     color: #7CBE21
+}
+.button-submit-small {
+    min-height: 38px;
+    min-width: 80px;
+    line-height: 36px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    background-color: #00bceb;
+    border-radius: 2px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 16px;
+    cursor: pointer;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+p#throttling-msg {
+    font-size: 14px;
+    width: 600px;
+    margin: auto;
+    padding-top: 30px;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
     /* IE10+ specific styles go here */  
