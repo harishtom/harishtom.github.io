@@ -1,18 +1,18 @@
 // configuration Settings for BYOS
 var config = {
   baseURL: "https://api.getcloudcherry.com",
-  SuveyToken: "DW-285849", //Pass survey token here created using Postman", //Pass survey token here created using Postman
-  securityPassphrase: "Dowcxpoc2020", //Pass security Passphrase used during survey token creation
+  SuveyToken: "TR-143352", //Pass survey token here created using Postman", //Pass survey token here created using Postman
+  securityPassphrase: "truistcx2020", //Pass security Passphrase used during survey token creation
   groupQuestion: "Please rate your experience with :",
   throttling: true, // Should be in boolean, whether throttling is required or not.
-  throttlingTime: 72, //should be in integer, denotes "Hour"
+  throttlingTime: 24, //should be in integer, denotes "Hour"
   throttlingSubmitButton: false, // Should be in boolean,
   throttlingMessage: "Thank you for using Webex Meetings.",
 
   responses: [
     {
       id: "text1",
-      questionId: "5f99dc1fb306af17407d2c5e",
+      questionId: "5f90a7b5f543471f60ab7311",
       questionText:
         "Overall, please rate your Webex Meeting Experience",
       questionType: "Number",
@@ -20,35 +20,35 @@ var config = {
     },
     {
       id: "text2",
-      questionId: "5f99dc3fb306af17407d2c61",
+      questionId: "5f90a827f543471f60ab7314",
       questionText: "Hosting/Joining the meeting",
       questionType: "Number",
       valueid: "starRatingGroupOne",
     },
     {
       id: "text3",
-      questionId: "5f99dc3fb306af17407d2c62",
+      questionId: "5f90a85cf543471f60ab7319",
       questionText: "Audio/Video Set up and Connection",
       questionType: "Number",
       valueid: "starRatingGroupTwo",
     },
     {
       id: "text4",
-      questionId: "5f99dc61b306af17407d2c65",
+      questionId: "5f90a89ff543471f60ab7325",
       questionText: "Audio or Video Quality",
       questionType: "Number",
       valueid: "starRatingGroupThree",
     },
     {
       id: "text5",
-      questionId: "5f99dc61b306af17407d2c66",
+      questionId: "5f90a8adf543471f60ab7334",
       questionText: "Content sharing",
       questionType: "Number",
       valueid: "starRatingGroupFour",
     },
     {
       id: "text6",
-      questionId: "5f99dc61b306af17407d2c67",
+      questionId: "5f90a8c9f543471f60ab7337",
       questionText: "Is there anything else you would like to share with us about your experience with Webex Meeting?",
       questionType: "Text",
       valueid: "comments",
@@ -90,18 +90,18 @@ window.onload = function () {
   if (user === config.SuveyToken) {
     document.getElementById("main-page").style.display = "none"
 
-  
+
     document.getElementById("resubmited-survey").style.display = "block";
     document.getElementById("throttling-msg").innerHTML = config.throttlingMessage;
     if(!config.throttlingSubmitButton){
       document.getElementById("resubmit").style.display = "none";
 
     }
-    
+
   }
 
 
-  
+
   // else{
 
   // }
@@ -361,4 +361,3 @@ function showSurvey(){
   document.getElementById("resubmited-survey").style.display = "none";
   document.getElementById("main-page").style.display = "block";
 }
-
