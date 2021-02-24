@@ -56,9 +56,9 @@ var config = {
     {
       id: "text7",
       questionId: "60369b36a16e754186a88f9d",
-      questionText: "Please share your email id",
+      questionText: "Please enter your email ID",
       questionType: "Text",
-      valueid: "comments",
+      valueid: "Email",
     },
   ],
 };
