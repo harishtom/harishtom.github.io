@@ -53,6 +53,13 @@ var config = {
       questionType: "Text",
       valueid: "comments",
     },
+    {
+      id: "text7",
+      questionId: "60369b36a16e754186a88f9d",
+      questionText: "Please share your email id",
+      questionType: "Text",
+      valueid: "comments",
+    },
   ],
 };
 
@@ -90,18 +97,18 @@ window.onload = function () {
   if (user === config.SuveyToken) {
     document.getElementById("main-page").style.display = "none"
 
-  
+
     document.getElementById("resubmited-survey").style.display = "block";
     document.getElementById("throttling-msg").innerHTML = config.throttlingMessage;
     if(!config.throttlingSubmitButton){
       document.getElementById("resubmit").style.display = "none";
 
     }
-    
+
   }
 
 
-  
+
   // else{
 
   // }
@@ -361,4 +368,3 @@ function showSurvey(){
   document.getElementById("resubmited-survey").style.display = "none";
   document.getElementById("main-page").style.display = "block";
 }
-
