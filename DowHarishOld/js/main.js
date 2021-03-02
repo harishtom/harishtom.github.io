@@ -63,7 +63,7 @@ var config = {
     {
       id: "text8",
       questionId: "60369b36a16e754186a88f9d",
-      questionText: "Please enter your email ID",
+      questionText: "Please leave your email address if we may contact you regarding your Webex experience?",
       questionType: "Text",
       valueid: "Email",
     },
