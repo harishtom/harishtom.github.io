@@ -45,7 +45,7 @@ var config = {
       questionText: "Video Quality",
       questionType: "Number",
       valueid: "starRatingGroupFour",
-    }
+    },
     {
       id: "text6",
       questionId: "5f99dc61b306af17407d2c66",
