@@ -100,7 +100,6 @@ window.onload = function () {
   // };
     //prefills.push(prefill1);
     document.getElementById("w3mission").value = '';
-
       //show the survey already submitted
   var user=getCookie("WXM_Token_cookie");
   if (user === config.SuveyToken) {
@@ -284,8 +283,6 @@ if (sign !== undefined) {
 }
   config.responses.filter(function(el) { return el.valueid == "comments"})[0].value = document.getElementById("w3mission").value;
   textbox = document.getElementById("w3mission").value;
-  config.responses.filter(function(el) { return el.valueid == "Email"})[0].value = document.getElementById("w3mission2").value;
- textbox = document.getElementById("w3mission2").value;
   if (smileRatingValue == undefined && starRatingGroupOneValue == undefined  && starRatingGroupTwoValue == undefined && starRatingGroupThreeValue == undefined && starRatingGroupFourValue == undefined && starRatingGroupFiveValue == undefined && textbox == "") {
     alert("Please complete your survey");
     document.getElementById('submit-survey').disabled = false;
