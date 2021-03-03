@@ -65,7 +65,7 @@ var config = {
       questionId: "60369b36a16e754186a88f9d",
       questionText: "Please leave your email address if we may contact you regarding your Webex experience?",
       questionType: "Text",
-      valueid: "comments",
+      valueid: "Email",
     },
   ],
 };
