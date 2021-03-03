@@ -146,7 +146,7 @@ width: calc(18.18% - 1px);
     height: auto;
     margin-right: 8px;
 }
-.smile-rating, .starRatingGroup1,.starRatingGroup2,.starRatingGroup3,.starRatingGroup4{
+.smile-rating, .starRatingGroup1,.starRatingGroup2,.starRatingGroup3,.starRatingGroup4,.starRatingGroup5{
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -154,7 +154,7 @@ width: calc(18.18% - 1px);
     cursor: pointer;
     width: 100%;
 }
-.smile-rating.rating-icon, .starRatingGroup1.rating-icon, .starRatingGroup2.rating-icon, .starRatingGroup3.rating-icon, .starRatingGroup4.rating-icon   {
+.smile-rating.rating-icon, .starRatingGroup1.rating-icon, .starRatingGroup2.rating-icon, .starRatingGroup3.rating-icon, .starRatingGroup4.rating-icon, .starRatingGroup5.rating-icon   {
     pointer-events: auto;
     cursor: pointer;
     width: calc((100% - 32px)/ 5);
