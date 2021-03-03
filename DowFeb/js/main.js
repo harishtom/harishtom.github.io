@@ -35,19 +35,26 @@ var config = {
     {
       id: "text4",
       questionId: "5f99dc61b306af17407d2c65",
-      questionText: "Audio or Video Quality",
+      questionText: "Audio Quality",
       questionType: "Number",
       valueid: "starRatingGroupThree",
     },
     {
       id: "text5",
-      questionId: "5f99dc61b306af17407d2c66",
-      questionText: "Content sharing",
+      questionId: "603ebba9e7044f034a20382c",
+      questionText: "Video Quality",
       questionType: "Number",
       valueid: "starRatingGroupFour",
     },
     {
       id: "text6",
+      questionId: "5f99dc61b306af17407d2c66",
+      questionText: "Content sharing",
+      questionType: "Number",
+      valueid: "starRatingGroupFive",
+    },
+    {
+      id: "text7",
       questionId: "5f99dc61b306af17407d2c67",
       questionText: "Is there anything else you would like to share with us about your experience with Webex Meeting?",
       questionType: "Text",
@@ -69,6 +76,7 @@ var starRatingGroupOneValue;
 var starRatingGroupTwoValue;
 var starRatingGroupThreeValue;
 var starRatingGroupFourValue;
+var starRatingGroupFiveValue;
 var questiondisplayText = [];
 
 var response = [];
@@ -90,18 +98,18 @@ window.onload = function () {
   if (user === config.SuveyToken) {
     document.getElementById("main-page").style.display = "none"
 
-  
+
     document.getElementById("resubmited-survey").style.display = "block";
     document.getElementById("throttling-msg").innerHTML = config.throttlingMessage;
     if(!config.throttlingSubmitButton){
       document.getElementById("resubmit").style.display = "none";
 
     }
-    
+
   }
 
 
-  
+
   // else{
 
   // }
@@ -207,6 +215,23 @@ $(".starRatingGroup4 > div img").click(function (event) {
   }
 });
 
+//while clicking showing and hiding the solid star images and outline star images group star 4
+
+$(".starRatingGroup5 > div img").click(function (event) {
+  starRatingGroupFiveValue = event.target.alt;
+  valueid = event.target.parentElement.parentElement.id;
+  config.responses.filter(function(el) {  return el.valueid === valueid})[0].value = starRatingGroupFiveValue;
+  for (var i = 0; i <= starRatingGroupFiveValue; i++) {
+    if ($(".starRatingGroup5 > div:nth-child("+ i +") > img:nth-child(2)").is(":visible")) {
+      $(".starRatingGroup5 > div > img:nth-child(2)").hide();
+      $(".starRatingGroup5 > div > img:nth-child(1)").show();
+    }
+
+    $(".starRatingGroup5 > div:nth-child("+ i +") > img:nth-child(1)").hide();
+    $(".starRatingGroup5 > div:nth-child("+ i +") > img:nth-child(2)").show();
+  }
+});
+
 // changing the background color for the NPS button while hovering
 // $(".scale-buttons > div").click(function (event) {
 //   // setting the default color for NPS Background
@@ -253,7 +278,7 @@ if (sign !== undefined) {
     function(el) { return el.valueid == "comments"}
   )[0].value = document.getElementById("w3mission").value;
   textbox = document.getElementById("w3mission").value;
-  if (smileRatingValue == undefined && starRatingGroupOneValue == undefined  && starRatingGroupTwoValue == undefined && starRatingGroupThreeValue == undefined && starRatingGroupFourValue == undefined && textbox == "") {
+  if (smileRatingValue == undefined && starRatingGroupOneValue == undefined  && starRatingGroupTwoValue == undefined && starRatingGroupThreeValue == undefined && starRatingGroupFourValue == undefined && starRatingGroupFiveValue == undefined && textbox == "") {
     alert("Please complete your survey");
     document.getElementById('submit-survey').disabled = false;
   } else {
@@ -361,4 +386,3 @@ function showSurvey(){
   document.getElementById("resubmited-survey").style.display = "none";
   document.getElementById("main-page").style.display = "block";
 }
-
