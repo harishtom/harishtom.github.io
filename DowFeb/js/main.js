@@ -60,6 +60,13 @@ var config = {
       questionType: "Text",
       valueid: "comments",
     },
+    {
+      id: "text8",
+      questionId: "60369b36a16e754186a88f9d",
+      questionText: "Please leave your email address if we may contact you regarding your Webex experience?",
+      questionType: "Text",
+      valueid: "comments",
+    },
   ],
 };
 
@@ -215,7 +222,7 @@ $(".starRatingGroup4 > div img").click(function (event) {
   }
 });
 
-//while clicking showing and hiding the solid star images and outline star images group star 4
+//while clicking showing and hiding the solid star images and outline star images group star 5
 
 $(".starRatingGroup5 > div img").click(function (event) {
   starRatingGroupFiveValue = event.target.alt;
