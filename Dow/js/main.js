@@ -5,7 +5,7 @@ var config = {
   securityPassphrase: "Dowcxpoc2020", //Pass security Passphrase used during survey token creation
   groupQuestion: "Please rate your experience with :",
   throttling: true, // Should be in boolean, whether throttling is required or not.
-  throttlingTime: 25, //should be in integer, denotes "Hour"
+  throttlingTime: 24, //should be in integer, denotes "Hour"
   throttlingSubmitButton: false, // Should be in boolean,
   throttlingMessage: "Thank you for using Webex Meetings.",
 
